@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+include of_api_python/*
+recursive-include of_api_python/*
+recursive-include of_api_python/* *.py
+recursive-include of_api_python/* *.txt
