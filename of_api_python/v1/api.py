@@ -168,7 +168,7 @@ class OpenFruitAPI:
                     value_string += '{0},'.format(v)
                 value = value_string
             if value is not None:
-                query += '{0}={1}{2}'.format(key, '=', str(value), str(split_value))
+                query += '{0}={1}{2}'.format(key, str(value), str(split_value))
         return query
 
     def __query(self, url, data=None):
