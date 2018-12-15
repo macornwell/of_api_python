@@ -165,10 +165,10 @@ class OpenFruitAPI:
             if isinstance(value, list):
                 value_string = ''
                 for v in value:
-                    value_string += v + ','
+                    value_string += '{0},'.format(v)
                 value = value_string
             if value is not None:
-                query += key + '=' + value + split_value
+                query += '{0}={1}{2}'.format(key, '=', str(value), str(split_value))
         return query
 
     def __query(self, url, data=None):
@@ -306,7 +306,7 @@ class OpenFruitAPI:
         }
         use_line = ''
         for use in uses:
-            use_line += use + ','
+            use_line += '{0},'.format(use)
         if len(use_line) > 0:
             use_line = use_line[0:-1]
         data['uses'] = use_line
