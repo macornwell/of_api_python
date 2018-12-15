@@ -315,8 +315,16 @@ class OpenFruitAPI:
         result = self.__query(url)
         return self.__create_results_list(result, self.__create_cultivar)
 
-    def get_species(self, genus_id=None):
-        data = {'genus_id': genus_id}
+    def get_species(self, species_id=None, name=None, latin_name=None, genus_latin_name=None):
+        data = {}
+        if species_id:
+            data['species_id'] = species_id
+        if name:
+            data['name'] = name
+        if latin_name:
+            data['latin_name'] = latin_name
+        if genus_latin_name:
+            data['genus'] = genus_latin_name
         url = self.url_prefix + '/species_list/?'
         url += self.__build_query_string(data)
         result = self.__query(url)
